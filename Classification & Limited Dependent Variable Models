@@ -1,0 +1,161 @@
+# Classification & Limited Dependent Variable Models
+Overview
+
+This assignment applies classification and limited dependent variable models using both R and Python across two real-world datasets:
+
+Heart Disease Dataset – to predict the presence of heart disease
+
+NSSO 68th Round Household Survey – to model non-vegetarian consumption behavior
+
+The assignment demonstrates end-to-end modeling workflows including logistic regression, probit models, decision trees, Tobit regression, model diagnostics, and performance evaluation.
+
+Objectives
+
+Build and evaluate binary classification models
+
+Compare parametric (Logit, Probit) and non-parametric (Decision Tree) approaches
+
+Handle censored dependent variables using Tobit regression
+
+Assess model quality using:
+
+Confusion matrices
+
+ROC curves & AUC
+
+Multicollinearity diagnostics
+
+Goodness-of-fit tests
+
+Datasets
+1️) Heart Disease Dataset
+
+Target variable: target (presence of heart disease)
+
+Predictors: clinical and physiological indicators
+
+Used for:
+
+Logistic Regression
+
+Decision Tree Classification
+
+2️) NSSO 68 Household Consumption Survey
+
+Binary outcome: non_veg (whether a household consumes non-vegetarian food)
+
+Censored outcome: nonveg_total_qty (total non-veg consumption quantity)
+
+Predictors include:
+
+Demographics (Age, Sex, Education)
+
+Socio-economic indicators
+
+Household characteristics
+
+Regional variables
+
+Methodology
+Part A: Logistic Regression (Heart Dataset)
+
+Converted target variable to factor / binary
+
+Fitted Logistic Regression
+
+Checked:
+
+Multicollinearity using VIF
+
+Model fit using Hosmer–Lemeshow test
+
+Evaluated performance using:
+
+Confusion Matrix
+
+ROC Curve and AUC
+
+Part B: Probit Model (NSSO Data)
+
+Created a binary indicator for non-vegetarian consumption
+
+Estimated a Probit regression model
+
+Analyzed how demographic and socio-economic factors influence dietary choice
+
+Part C: Decision Tree Classification
+
+Trained a Decision Tree classifier
+
+Visualized tree structure
+
+Compared predictive performance with logistic regression
+
+Evaluated using:
+
+Confusion Matrix
+
+ROC Curve and AUC
+
+Part D: Tobit Regression (Censored Data)
+
+Constructed a censored dependent variable for non-veg consumption quantity
+
+Applied Tobit regression to handle zero-consumption censoring
+
+Estimated determinants of non-veg consumption intensity
+
+Tools & Technologies
+R
+
+tidyverse – data manipulation
+
+caret – model evaluation
+
+pROC – ROC & AUC
+
+ResourceSelection – Hosmer–Lemeshow test
+
+car – VIF diagnostics
+
+rpart, rpart.plot – decision trees
+
+AER – Tobit regression
+
+Python
+
+pandas, numpy – data handling
+
+scikit-learn – classification models
+
+statsmodels – Probit & Tobit modeling
+
+matplotlib, seaborn – visualization
+
+Key Insights
+
+Logistic and Probit models provide interpretable probability estimates
+
+Decision Trees capture non-linear patterns but risk overfitting
+
+Tobit regression is essential when outcomes are censored at zero
+
+Model performance varies by method and dataset, highlighting trade-offs between interpretability and flexibility
+
+Project Structure
+├── data/
+│   ├── heart.csv
+│   └── NSSO68.csv
+├── R/
+│   └── A4_models.R
+├── Python/
+│   └── A4_models.py
+└── README.md
+
+Notes
+
+File paths should be updated based on local system setup
+
+Some categorical variables require proper encoding before modeling
+
+This assignment is part of academic coursework and focuses on applied econometric and machine learning techniques
