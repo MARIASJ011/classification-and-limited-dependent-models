@@ -1,5 +1,4 @@
-# A4-codes
-Codes of assignment A4
+# Codes
 R 
 # Core libraries 
 install.packages("tidyverse") 
